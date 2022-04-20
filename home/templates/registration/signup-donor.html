@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{{ block.super}}
+<h1 style="font-size:50px; margin-top:150px; color:white; font-family: 'Lemonada', cursive; " >Start saving lives by signing<br> up as a donor today.</h1>
+
+<form name="myform" style="align-items: center;">
+    <label for="fname" style="color: white;font-weight: bolder;"> Name:</label>
+	<input type="text" name="fname" placeholder="Enter your first name" style="background-color: white; color: black; text-decoration: none; border-radius: 10px ;  margin-top: 60px;
+    margin-left: 10px; padding: 10px 20px;border: none;"></input><br>
+    <label for="contact" style="color: white;font-weight: bolder;">Contact:</label>
+    <input type="contact" name="lname" placeholder="Enter your contact" style="background-color: white; color: black; text-decoration: none; border-radius: 10px ;  margin-top: 60px;
+    margin-left: 10px; padding: 10px 20px;border: none;"></input><br>
+    <label for="email" style="color: white; font-weight: bolder;">Email:</label>
+    <input type="email" name="email" placeholder="Enter your email"style="background-color: white; color: black; text-decoration: none; border-radius: 10px ;  margin-top: 60px;
+    margin-left: 10px; padding: 10px 20px;border: none;" ></input><br>
+    <label for="password" style="color: white; font-weight: bolder;">password:</label>
+    <input type="password" name="password" placeholder="Enter your password" style="background-color: white; color: black; text-decoration: none; border-radius: 10px ;  margin-top: 60px;
+    margin-left: 10px; padding: 10px 20px;border: none;"></input><br>
+    <label for="password" style="color: white; font-weight: bolder;">Confirm your password:</label>
+    <input type="password" name=" confirm password" placeholder="Enter your password" style="background-color: white; color: black; text-decoration: none; border-radius: 10px ;  margin-top: 60px;
+    margin-left: 10px; padding: 10px 20px;border: none;"></input><br>
+    <input type="submit" name="submit" style="background-color: white; color: black; text-decoration: none; border-radius: 10px ;  margin-top: 60px;
+    margin-left: 10px; padding: 10px 20px;border: none;" ></input>
+</form>
+{% endblock %}
