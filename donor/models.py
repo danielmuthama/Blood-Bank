@@ -28,4 +28,19 @@ class Donor(models.Model):
         self.save()
     def delete_donor(self):
         self.delete()
-
+class Hospital(models.Model):
+    user=models.OneToOneField(User,on_delete=models.CASCADE)
+    name = models.CharField(max_length=200)
+    email = models.EmailField(max_length=200)
+    phone = models.CharField(max_length=200)
+    address = models.CharField(max_length=200)
+    city = models.CharField(max_length=200)
+    state = models.CharField(max_length=200)
+    zipcode = models.CharField(max_length=200)
+    country = models.CharField(max_length=200)
+    def __str__(self):
+        return self.name
+    def save_hospital(self):
+        self.save()
+    def delete_hospital(self):
+        self.delete()
