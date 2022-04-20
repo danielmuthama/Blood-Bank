@@ -1,4 +1,6 @@
-#!/home/moringa/Blood-Bank/virtual/bin/python
+#!/bin/sh
+'''exec' "/home/moringa/Desktop/Blood Bank/virtual/bin/python" "$0" "$@"
+' '''
 # -*- coding: utf-8 -*-
 import re
 import sys
