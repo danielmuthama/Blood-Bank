@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,15 +10,18 @@
 </head>
 
 <body>
-    <header class="header">
-        Header
-    </header>
+    <div class="main-bg" style="background-image: url(https://fortmirrorprod.s3-ap-south-1.amazonaws.com/626532/healhTipsFolder/10851530606344507.jpg);  background-repeat: no-repeat; background-size: cover; height: 100vh;  background-position: center; text-align:center; overflow-x:hidden; ">
+        {% include "navbar.html" %}
+        <header class="header">
+        </header>
 
-    <main class="main">
-        {% block content %}
+        <main class="main">
+            {% block content %}
 
-        {% endblock %}
-    </main>
+            {% endblock %}
+        </main>
+    </div>
+    
 </body>
 
 </html>

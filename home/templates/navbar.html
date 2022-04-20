@@ -1,0 +1,39 @@
+{% load static %}
+<div class="main" style=" width: 100% ; " >
+  <div class="navbar " >
+    <nav class="container" style="width: 100%;display: flex;justify-content: space-between; align-items: center;">
+      <a class="navbar" href="{% url 'home' %}" style="display: flex; align-items: center;">
+        <img src="{% static 'photos/bestlogo-removebg-preview.png' %}" alt="" width="80" height="80">
+        <span class="navbar" style="color: white; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; bottom: 30px;">
+            Blood-Bank
+        </span>
+      </a>
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+       
+        <ul class="nav navbar-nav navbar-right ml-auto mr-5">
+  
+          {% if user.is_authenticated %}
+         
+         
+          
+              </div>
+            </li>
+          {% else %}
+          <li class="nav-item" >
+              <a href="">Home</a>
+              <a href="">Hospital</a>
+              <a href="">Donor</a>
+              <a href='' class=" btn " style="background-color: white; color: black; text-decoration: none; border-radius: 10px ;  margin-top: 60px;
+              margin-left: 10px; padding: 10px 20px;" > Signup </a>
+              <a href='' class=" btn " style="background-color: white; color: black; text-decoration: none; border-radius: 10px ;  margin-top: 60px;
+              margin-left: 10px; padding: 10px 20px;" > Login </a>
+          </li>
+          {%endif%}
+         
+      </ul>
+      </div>
+    </nav>
+  </div>
+
+</div>
