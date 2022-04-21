@@ -40,10 +40,8 @@ def hos_signup(request):
             hos = Hospital(user=user)
             hos.save_hospital()
 
-            login(request, user)
-
             messages.success(request, "Registration successful.")
-            return redirect(home)
+            return redirect(hos_login)
 
         messages.error(
             request, "Unsuccessful registration. Invalid information.")
@@ -61,7 +59,7 @@ def hos_login(request):
             if user is not None:
                 login(request, user)
                 messages.info(request, f"You are now logged in as {username}.")
-                return redirect("main:homepage")
+                return redirect(home)
             else:
                 messages.error(request, "Invalid username or password.")
         else:
@@ -76,12 +74,12 @@ def don_signup(request):
         form = NewUserForm(request.POST)
         if form.is_valid():
             user = form.save()
-            login(request, user)
+
             don = Donor(user=user)
             don.save_donor()
 
             messages.success(request, "Registration successful.")
-            return redirect(home)
+            return redirect(don_login)
 
         messages.error(
             request, "Unsuccessful registration. Invalid information.")
@@ -99,7 +97,7 @@ def don_login(request):
             if user is not None:
                 login(request, user)
                 messages.info(request, f"You are now logged in as {username}.")
-                return redirect("main:homepage")
+                return redirect(home)
             else:
                 messages.error(request, "Invalid username or password.")
         else:

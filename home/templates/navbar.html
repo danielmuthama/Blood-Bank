@@ -16,10 +16,19 @@
     <a href=" {% url 'home' %}" class="nav__link">Home</a>
     <a href="#" class="nav__link">Hospital</a>
     <a href="#" class="nav__link">Donor</a>
+
+
+    {% if user.is_authenticated %}
+
+    <a href="{% url 'logout' %}" class=" btn ">Logout </a>
+    {% else %}
+
     <a href="{% url 'hos_signup' %}" class=" btn "> Hos -Signup </a>
     <a href="{% url 'hos_login' %}" class=" btn ">Hos- Login </a>
     <a href="{% url 'don_signup' %}" class=" btn "> Don -Signup </a>
     <a href="{% url 'don_login' %}" class=" btn ">Don- Login </a>
+    {% endif %}
+
   </nav>
 
 
