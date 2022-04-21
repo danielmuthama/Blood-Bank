@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{{ block.super}}
+<h1 style="font-size:50px; margin-top:10px; color:white; font-family: 'Lemonada', cursive; " >Create a blood drive campaign.</h1>
+
+<form name="myform" style="margin: 0 auto; justify-content: center;display: flex; flex-direction: column; width: fit-content;">
+    <div class="form-cont" style="display: flex; align-items: center; margin-bottom: 20px;">
+        <label for="fname" style="color: white;font-weight: bolder;"> Blood type:</label>
+	<input required type="text" name="fname" placeholder="Enter your blood type" style="background-color: white; color: black; text-decoration: none; border-radius: 10px ;  
+    margin-left: 10px; padding: 10px 20px;border: none;"></input><br>
+    </div>
+    <div class="form-cont"style="display: flex; align-items: center; margin-bottom: 20px;">
+        <label for="password" style="color: white; font-weight: bolder;">Amount:</label>
+        <input required type="password" name="password" placeholder="Enter amount" style="background-color: white; color: black; text-decoration: none; border-radius: 10px ;  
+        margin-left: 10px; padding: 10px 20px;border: none;"></input><br>
+    </div>
+    <input type="submit" name="submit" style="background-color: white; color: black; text-decoration: none; border-radius: 10px ;  margin-top: 20px;
+    margin-left: 10px; padding: 10px 10px;border: none;" ></input>
+</form>
+{% endblock %}

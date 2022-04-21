@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'donor.apps.DonorConfig',
     'rest_framework',
+    'bootstrap4',
 ]
 
 MIDDLEWARE = [
