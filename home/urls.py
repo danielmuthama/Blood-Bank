@@ -11,7 +11,10 @@ urlpatterns = [
     path('hos/login', views.hos_login, name='hos_login'),
     path('don/signup', views.don_signup, name='don_signup'),
     path('don/login', views.don_login, name='don_login'),
+
     path('don/donate', views.don_apply_to_donate, name='don_donate'),
+    path('hos/blood_drive', views.hos_create_blood_drive,
+         name='hos_create_blood_drive'),
 
 ]
 

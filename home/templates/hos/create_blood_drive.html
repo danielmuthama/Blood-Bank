@@ -3,17 +3,17 @@
 
 {% block content %}
 {{ block.super}}
-<h1 class="page-title"> Apply to donate.</h1>
+<h1 class="page-title"> Create blood drive campaign.</h1>
 <form class="donate-form">
     <div class="form-cont">
         <label for="fname"> Blood type:</label>
         <input required type="text" name="blood_type"
-            placeholder="Enter your blood type"></input>
+            placeholder="Enter blood type"></input>
     </div>
     <div class="form-cont">
-        <label for="password">Age:</label>
+        <label for="password">Amount <sup>*In litres</sup>:</label>
         <input required type="number" name="password"
-            placeholder="Enter your age"></input>
+            placeholder="Amount required"></input>
     </div>
     <input type="submit" value="Apply" class="btn"></input>
 </form>

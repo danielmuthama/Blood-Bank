@@ -20,6 +20,11 @@ input {
   border: none;
 }
 
+input:focus {
+  outline: none;
+  border: none;
+}
+
 .btn {
   cursor: pointer;
   background-color: white;
@@ -110,6 +115,11 @@ input {
   align-items: center;
   justify-content: space-between;
   margin-bottom: 2rem;
+}
+
+.form-cont sup {
+  font-size: 1rem;
+  color: black;
 }
 
 .form-cont input {

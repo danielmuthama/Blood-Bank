@@ -39,23 +39,24 @@ def don_login(request):
 
 
 def hos_create_blood_drive(request):
-    # Check if authenticated user is a hospital user obj
-    hospital = Hospital.objects.get(user=request.user)
-    if not hospital:
-        return redirect('home')
-
     if request.method == 'POST':
-        user = request.user
-        blood_group = request.POST['blood_group']
-        amount_wanted = request.POST['amount_wanted']
+        # Check if authenticated user is a hospital user obj
+        hospital = Hospital.objects.get(user=request.user)
+        if not hospital:
+            return redirect('home')
 
-        blood_drive = BloodDrive(
-            user=user, blood_group=blood_group, amount_wanted=amount_wanted)
-        blood_drive.save()
+        if request.method == 'POST':
+            user = request.user
+            blood_group = request.POST['blood_group']
+            amount_wanted = request.POST['amount_wanted']
 
-        return redirect(home)
+            blood_drive = BloodDrive(
+                user=user, blood_group=blood_group, amount_wanted=amount_wanted)
+            blood_drive.save()
 
-    return render(request, 'hos/reate_blood_drive.html')
+            return redirect(home)
+
+    return render(request, 'hos/create_blood_drive.html')
 
 
 def don_apply_to_donate(request):
