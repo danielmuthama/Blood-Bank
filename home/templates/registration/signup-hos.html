@@ -3,35 +3,34 @@
 
 {% block content %}
 {{ block.super}}
-<h1 style="font-size:50px; margin-top:10px; color:white; font-family: 'Lemonada', cursive; " >Get a donor by signing up as a <br> recipient or hospital today.</h1>
+<h1 class="page-title">Get a donor by signing up as a <br> recipient or hospital today.
+</h1>
 
-<form name="myform" style="margin: 0 auto; justify-content: center;display: flex; flex-direction: column; width: fit-content;">
-    <div class="form-cont" style="display: flex; align-items: center; margin-bottom: 20px;">
-        <label for="fname" style="color: white;font-weight: bolder;"> Name:</label>
-	<input required type="text" name="fname" placeholder="Enter your first name" style="background-color: white; color: black; text-decoration: none; border-radius: 10px ;  
-    margin-left: 10px; padding: 10px 20px;border: none;"></input><br>
+<form class="auth-form">
+    <div class="form-cont">
+        <label for="fname"> Name:</label>
+        <input required type="text" name="fname"
+            placeholder="Enter your first name"></input>
     </div>
-    <div class="form-cont" style="display: flex; align-items: center; margin-bottom: 20px;">
-        <label for="contact" style="color: white;font-weight: bolder;">Contact:</label>
-    <input required type="contact" name="lname" placeholder="Enter your contact" style="background-color: white; color: black; text-decoration: none; border-radius: 10px ;  
-    margin-left: 10px; padding: 10px 20px;border: none;"></input><br>
+    <div class="form-cont">
+        <label for="contact">Contact:</label>
+        <input required type="contact" name="lname"
+            placeholder="Enter your contact"></input>
     </div>
-    <div class="form-cont" style="display: flex; align-items: center; margin-bottom: 20px;">
-        <label for="email" style="color: white; font-weight: bolder;">Email:</label>
-        <input required type="email" name="email" placeholder="Enter your email"style="background-color: white; color: black; text-decoration: none; border-radius: 10px ;  
-        margin-left: 10px; padding: 10px 20px;border: none;" ></input><br>
+    <div class="form-cont">
+        <label for="email">Email:</label>
+        <input required type="email" name="email" placeholder="Enter your email"></input>
     </div>
-    <div class="form-cont"style="display: flex; align-items: center; margin-bottom: 20px;">
-        <label for="password" style="color: white; font-weight: bolder;">password:</label>
-        <input required type="password" name="password" placeholder="Enter your password" style="background-color: white; color: black; text-decoration: none; border-radius: 10px ;  
-        margin-left: 10px; padding: 10px 20px;border: none;"></input><br>
+    <div class="form-cont">
+        <label for="password">password:</label>
+        <input required type="password" name="password"
+            placeholder="Enter your password"></input>
     </div>
-    <div class="form-cont" style="display: flex; align-items: center; margin-bottom: 20px;" >
-        <label for="password" style="color: white; font-weight: bolder;">Confirm :</label>
-        <input required type="password" name=" confirm password" placeholder="Enter your password" style="background-color: white; color: black; text-decoration: none; border-radius: 10px ;  
-        margin-left: 10px; padding: 10px 20px;border: none;"></input><br>
+    <div class="form-cont">
+        <label for="password">Confirm :</label>
+        <input required type="password" name=" confirm password"
+            placeholder="Enter your password"></input>
     </div>
-    <input type="submit" name="submit" style="background-color: white; color: black; text-decoration: none; border-radius: 10px ;  margin-top: 60px;
-    margin-left: 10px; padding: 10px 20px;border: none;" ></input>
+    <input type="submit" name="submit" class="btn"></input>
 </form>
 {% endblock %}
