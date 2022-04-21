@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 class BloodRequest(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     blood_group = models.CharField(max_length=255)
+    tel = models.CharField(max_length=50)
     age = models.IntegerField(default=0)
 
 
