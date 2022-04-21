@@ -31,7 +31,7 @@ def hos_login(request):
 
 
 def don_signup(request):
-    return render(request, 'registration/login-donor.html')
+    return render(request, 'registration/signup-donor.html')
 
 
 def don_login(request):
@@ -60,18 +60,19 @@ def hos_create_blood_drive(request):
 
 def don_apply_to_donate(request):
     # Check if authenticated user is a donor user obj
-    donor = Donor.objects.get(user=request.user)
-    if not donor:
-        return redirect('home')
-
     if request.method == 'POST':
-        user = request.user
-        blood_group = request.POST['blood_group']
-        age = request.POST['age']
+        donor = Donor.objects.get(user=request.user)
+        if not donor:
+            return redirect('home')
 
-        blood_request = BloodRequest(
-            user=user, blood_group=blood_group, age=age)
-        blood_request.save()
+        if request.method == 'POST':
+            user = request.user
+            blood_group = request.POST['blood_group']
+            age = request.POST['age']
 
-        return render(request, 'home.html')
+            blood_request = BloodRequest(
+                user=user, blood_group=blood_group, age=age)
+            blood_request.save()
+
+            return render(request, 'home.html')
     return render(request, 'don/apply_to_donate.html')

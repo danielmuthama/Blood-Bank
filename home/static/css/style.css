@@ -94,7 +94,8 @@ input {
   margin-bottom: 8rem;
 }
 
-.auth-form {
+.auth-form,
+.donate-form {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -123,6 +124,7 @@ input {
   font-weight: bolder;
 }
 
-.auth-form .btn {
+.auth-form .btn,
+.donate-form .btn {
   margin: 3rem auto;
 }
