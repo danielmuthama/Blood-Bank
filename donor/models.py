@@ -12,15 +12,13 @@ class User(models.Model):
 
 
 class BloodRequest(models.Model):
-    user = models.ForeignKey(
-        User, related_name="user_id", on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     blood_group = models.CharField(max_length=255)
     age = models.IntegerField(default=0)
 
 
 class BloodDrive(models.Model):
-    user = models.ForeignKey(
-        User, related_name="user_id", on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     blood_group = models.CharField(max_length=255)
     amount_wanted = models.IntegerField(default=0)
 

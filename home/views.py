@@ -17,7 +17,9 @@ def request_blood(request):
 
 
 def home(request):
-    return render(request, 'home.html')
+
+    blood_requests = BloodRequest.objects.all()
+    return render(request, 'home.html', {'blood_requests': blood_requests})
 
 
 def hos_create_blood_drive(request):
