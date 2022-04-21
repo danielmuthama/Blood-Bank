@@ -1,5 +1,4 @@
 from django.db import models
-
 # Create your models here.
 
 
@@ -10,6 +9,18 @@ class User(models.Model):
     password = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+
+class BloodRequest(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    blood_group = models.CharField(max_length=255)
+    age = models.IntegerField(default=0)
+
+
+class BloodDrive(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    blood_group = models.CharField(max_length=255)
+    amount_wanted = models.IntegerField(default=0)
 
 
 class Donor(models.Model):

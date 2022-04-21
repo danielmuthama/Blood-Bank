@@ -8,14 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300&display=swap" rel="stylesheet">
-    <title style="font-family: 'Lemonada', cursive; ">Blood Bank</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %} ">
+    <title>Blood Bank</title>
 </head>
 
-<body style="font-family: 'Lemonada', cursive;">
-    <div class="main-bg" style="background-image: url('static/photos/imageedit_3_8799574746.jpg' );  background-repeat: no-repeat; background-size: cover; height: 100vh;  background-position: center; text-align:center; overflow-x:hidden; opacity: 1; ">
-        {% include "navbar.html" %}
+<body>
+    <div class="main-bg">
+
         <header class="header">
+            {% include "navbar.html" %}
         </header>
 
         <main class="main">
@@ -24,7 +28,7 @@
             {% endblock %}
         </main>
     </div>
-    
+
 </body>
 
 </html>

@@ -1,0 +1,128 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  line-height: 1.6;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Lemonada", cursive;
+}
+
+input {
+  border: none;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  width: fit-content;
+
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background-color: hsla(189, 27%, 57%, 0.753);
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo__name {
+  font-size: 2.8rem;
+  color: whitesmoke;
+}
+
+.nav {
+  flex-grow: 0.4;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav__link {
+  font-size: 1.8rem;
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.main-bg {
+  background-image: linear-gradient(
+      to right bottom,
+      hsla(189, 27%, 57%, 0.753),
+      hsla(358, 75%, 32%, 0.767)
+    ),
+    url("/static/photos/imageedit_3_8799574746.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  background-position: center;
+  text-align: center;
+  overflow-x: hidden;
+  opacity: 1;
+}
+
+.home-container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-size: 5rem;
+  color: white;
+  margin-bottom: 8rem;
+}
+
+.auth-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+  width: fit-content;
+
+  padding: 1rem;
+}
+
+.form-cont {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.form-cont input {
+  margin-left: 1rem;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  border: none;
+}
+
+.form-cont label {
+  color: white;
+  font-weight: bolder;
+}
+
+.auth-form .btn {
+  margin: 3rem auto;
+}
