@@ -1,4 +1,12 @@
+from tkinter import PIESLICE
 from django.shortcuts import render, redirect
+
+
+from .forms import NewUserForm
+from django.contrib.auth import login, authenticate, logout  # add this
+from django.contrib import messages
+
+from django.contrib.auth.forms import AuthenticationForm
 
 from donor.models import Donor, Hospital, BloodRequest, BloodDrive
 
@@ -23,19 +31,88 @@ def home(request):
 
 
 def hos_signup(request):
-    return render(request, 'registration/signup-hos.html')
+    if request.method == "POST":
+        form = NewUserForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+
+            # create hospital obj
+            hos = Hospital(user=user)
+            hos.save_hospital()
+
+            login(request, user)
+
+            messages.success(request, "Registration successful.")
+            return redirect(home)
+
+        messages.error(
+            request, "Unsuccessful registration. Invalid information.")
+    form = NewUserForm()
+    return render(request=request, template_name="registration/signup-hos.html", context={"register_form": form})
 
 
 def hos_login(request):
-    return render(request, 'registration/login-hos.html')
+    if request.method == "POST":
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                messages.info(request, f"You are now logged in as {username}.")
+                return redirect("main:homepage")
+            else:
+                messages.error(request, "Invalid username or password.")
+        else:
+            messages.error(request, "Invalid username or password.")
+    login_form = AuthenticationForm()
+
+    return render(request=request, template_name="registration/login-hos.html", context={"login_form": login_form})
 
 
 def don_signup(request):
-    return render(request, 'registration/signup-donor.html')
+    if request.method == "POST":
+        form = NewUserForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            don = Donor(user=user)
+            don.save_donor()
+
+            messages.success(request, "Registration successful.")
+            return redirect(home)
+
+        messages.error(
+            request, "Unsuccessful registration. Invalid information.")
+    form = NewUserForm()
+    return render(request=request, template_name="registration/signup-donor.html", context={"register_form": form})
 
 
 def don_login(request):
-    return render(request, 'registration/login-donor.html')
+    if request.method == "POST":
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                messages.info(request, f"You are now logged in as {username}.")
+                return redirect("main:homepage")
+            else:
+                messages.error(request, "Invalid username or password.")
+        else:
+            messages.error(request, "Invalid username or password.")
+    login_form = AuthenticationForm()
+
+    return render(request=request, template_name="registration/login-donor.html", context={"login_form": login_form})
+
+
+def logout_request(request):
+    logout(request)
+    messages.info(request, "You have successfully logged out.")
+    return redirect(home)
 
 
 def hos_create_blood_drive(request):

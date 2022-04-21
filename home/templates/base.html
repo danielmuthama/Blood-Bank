@@ -19,6 +19,9 @@
     <div class="main-bg">
 
         <header class="header">
+            {% for message in messages %}
+            <p>{{message}} </p>
+            {% endfor %}
             {% include "navbar.html" %}
         </header>
 

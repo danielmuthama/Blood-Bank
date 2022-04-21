@@ -5,18 +5,11 @@
 {{ block.super}}
 <h1 class="page-title"> Login as a donor</h1>
 
-<form class="auth-form">
+<form class="auth-form" method="post">
+    {% csrf_token %}
+    {{ login_form }}
 
-    <div class="form-cont">
-        <label for="fname"> Username:</label>
-        <input required type="text" name="fname"
-            placeholder="Enter your first name"></input>
-    </div>
-    <div class="form-cont">
-        <label for="password">Password:</label>
-        <input required type="password" name="password"
-            placeholder="Enter your password"></input>
-    </div>
+
     <input type="submit" name="submit" class="btn"></input>
 </form>
 {% endblock %}

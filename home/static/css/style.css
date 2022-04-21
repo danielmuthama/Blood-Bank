@@ -110,6 +110,10 @@ input:focus {
   padding: 1rem;
 }
 
+/* .auth-form span {
+  display: none;
+} */
+
 .form-cont {
   display: flex;
   align-items: center;
@@ -122,16 +126,17 @@ input:focus {
   color: black;
 }
 
-.form-cont input {
-  margin-left: 1rem;
+.auth-form input {
   border-radius: 1rem;
   padding: 1rem 2rem;
+  margin-bottom: 1.5rem;
   border: none;
 }
 
-.form-cont label {
+.auth-form label {
   color: white;
   font-weight: bolder;
+  display: inherit;
 }
 
 .auth-form .btn,
