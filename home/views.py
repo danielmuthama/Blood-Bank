@@ -22,6 +22,22 @@ def home(request):
     return render(request, 'home.html', {'blood_requests': blood_requests})
 
 
+def hos_signup(request):
+    return render(request, 'registration/signup-hos.html')
+
+
+def hos_login(request):
+    return render(request, 'registration/login-hos.html')
+
+
+def don_signup(request):
+    return render(request, 'registration/login-donor.html')
+
+
+def don_login(request):
+    return render(request, 'registration/login-donor.html')
+
+
 def hos_create_blood_drive(request):
     # Check if authenticated user is a hospital user obj
     hospital = Hospital.objects.get(user=request.user)

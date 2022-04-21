@@ -1,39 +1,42 @@
 {% load static %}
-<div class="main" style=" width: 100% ; " >
-  <div class="navbar " >
-    <nav class="container" style="width: 100%;display: flex;justify-content: space-between; align-items: center;">
-      <a class="navbar" href="{% url 'home' %}" style="display: flex; align-items: center; text-decoration: none; font-size: larger;">
-        <img src="{% static 'photos/bestlogo-removebg-preview.png' %}" alt="" width="100" height="100">
-        <span class="navbar" style=" text-decoration: none; color: white; font-family: 'Lemonada', cursive; bottom: 30px; ">
-            Blood-Bank
+<div class="main" style=" width: 100% ; ">
+  <div class="navbar ">
+    <nav class="container"
+      style="width: 100%;display: flex;justify-content: space-between; align-items: center;">
+      <a class="navbar" href="{% url 'home' %}"
+        style="display: flex; align-items: center; text-decoration: none; font-size: larger;">
+        <img src="{% static 'photos/bestlogo-removebg-preview.png' %}" alt="" width="100"
+          height="100">
+        <span class="navbar"
+          style=" text-decoration: none; color: white; font-family: 'Lemonada', cursive; bottom: 30px; ">
+          Blood-Bank
         </span>
       </a>
-      
+
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-       
+
         <ul class="nav navbar-nav navbar-right ml-auto mr-5">
-  
+
           {% if user.is_authenticated %}
-         
-         
-          
-              </div>
-            </li>
-          {% else %}
-          <li class="nav" style="list-style-type: none;" >
-              <a href="" style="text-decoration: none; color: whitesmoke;" >Home</a>
-              <a href="" style="text-decoration: none;color: whitesmoke;">Hospital</a>
-              <a href="" style="text-decoration: none;color: whitesmoke;">Donor</a>
-              <a href='' class=" btn " style="background-color: white; color: black; text-decoration: none; border-radius: 10px ;  margin-top: 60px;
-              margin-left: 10px; padding: 10px 20px;" > Signup </a>
-              <a href='' class=" btn " style="background-color: white; color: black; text-decoration: none; border-radius: 10px ;  margin-top: 60px;
-              margin-left: 10px; padding: 10px 20px;" > Login </a>
-          </li>
-          {%endif%}
-         
-      </ul>
+
+
       </div>
-    </nav>
+      </li>
+      {% else %}
+      <li class="nav" style="list-style-type: none;">
+        <a href="" style="text-decoration: none; color: whitesmoke;">Home</a>
+        <a href="" style="text-decoration: none;color: whitesmoke;">Hospital</a>
+        <a href="" style="text-decoration: none;color: whitesmoke;">Donor</a>
+        <a href="{% url 'hos_signup' %}" class=" btn " style="background-color: white; color: black; text-decoration: none; border-radius: 10px ;  margin-top: 60px;
+              margin-left: 10px; padding: 10px 20px;"> Signup </a>
+        <a href="{% url 'hos_login' %}" class=" btn " style="background-color: white; color: black; text-decoration: none; border-radius: 10px ;  margin-top: 60px;
+              margin-left: 10px; padding: 10px 20px;"> Login </a>
+      </li>
+      {%endif%}
+
+      </ul>
   </div>
+  </nav>
+</div>
 
 </div>
