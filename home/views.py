@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 
 def home(request):
-    return render(request, 'registration/login-donor.html')
+    return render(request, 'registration/login-hos.html')
 
 
 def hos_request_blood(request):
