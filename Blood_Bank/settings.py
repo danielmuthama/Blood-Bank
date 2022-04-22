@@ -49,7 +49,7 @@ ROOT_URLCONF = 'Blood_Bank.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['/home/templates/base.html'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -61,6 +61,10 @@ TEMPLATES = [
         },
     },
 ]
+
+
+USER_ACC = 'DONOR'
+
 
 WSGI_APPLICATION = 'Blood_Bank.wsgi.application'
 
