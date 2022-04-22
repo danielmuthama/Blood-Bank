@@ -145,3 +145,28 @@ input:focus {
 .donate-form .btn {
   margin: 3rem auto;
 }
+
+.donors {
+  background-color: red;
+  width: 50%;
+  margin: 0 auto;
+}
+
+th {
+  font-size: 2rem;
+}
+
+tr {
+  cursor: pointer;
+  border-bottom: 1px solid black;
+  background-color: rgba(127, 255, 212, 0.7);
+  transition: all 0.4s;
+}
+
+tr:hover {
+  background-color: rgb(127, 255, 212);
+}
+
+td {
+  padding: 0.5rem;
+}

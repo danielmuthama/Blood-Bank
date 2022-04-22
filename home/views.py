@@ -31,6 +31,11 @@ def home(request):
     return render(request, 'home.html', {'blood_requests': blood_requests})
 
 
+def list_of_donors(request):
+    blood_requests = BloodRequest.objects.all()
+    return render(request, 'hos/list_of_donors.html', {'blood_requests': blood_requests})
+
+
 def hos_signup(request):
     if request.method == "POST":
         form = NewUserForm(request.POST)
@@ -60,7 +65,7 @@ def hos_login(request):
             if user is not None:
                 login(request, user)
                 messages.info(request, f"You are now logged in as {username}.")
-                return redirect(home)
+                return redirect(list_of_donors)
             else:
                 messages.error(request, "Invalid username or password.")
         else:
