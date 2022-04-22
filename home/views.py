@@ -1,6 +1,10 @@
 
 import email
 from django.shortcuts import render, redirect
+from django.urls import reverse
+from django.http import HttpResponseRedirect
+
+from django.conf import Settings, settings
 
 
 from .forms import NewUserForm
@@ -108,7 +112,9 @@ def don_login(request):
             if user is not None:
                 login(request, user)
                 messages.info(request, f"You are now logged in as {username}.")
+
                 return redirect(home)
+
             else:
                 messages.error(request, "Invalid username or password.")
         else:
