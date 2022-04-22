@@ -3,32 +3,37 @@
 
 {% block content %}
 {{ block.super}}
-<h1 class="page-title"> Create blood drive campaign.</h1>
-<table class="donors">
-    <tr>
-        <th>Username</th>
-        <th>Contact</th>
-        <th>Blood Type</th>
-        <th>Age</th>
-    </tr>
+<h1 class="page-title"> List of willing donors.</h1>
+<div class="donors-container">
+    <table class="donors">
+        <tr>
+            <th>Username</th>
+            <th>Contact</th>
+            <th>Blood Type</th>
+            <th>Age</th>
+        </tr>
 
-    <tr>
-        <td>Matt</td>
-        <td>Pearson@gmail.com</td>
-        <td>A+</td>
-        <td>32</td>
-    </tr>
+        <tr>
+            <td>Matt</td>
+            <td>Pearson@gmail.com</td>
+            <td>A+</td>
+            <td>32</td>
+        </tr>
 
-    {% for blood_request in blood_requests %}
-    <tr>
-        <td>{{blood_request.user.username }} </td>
-        <td>{{blood_request.user.email }}</td>
-        <td>{{blood_request.blood_group }}</td>
-        <td>{{blood_request.age }}</td>
-    </tr>
-    {% endfor %}
+        {% for blood_request in blood_requests %}
+        <tr>
+            <td>{{blood_request.user.username }} </td>
+            <td>{{blood_request.user.email }}</td>
+            <td>{{blood_request.blood_group }}</td>
+            <td>{{blood_request.age }}</td>
+        </tr>
+        {% endfor %}
 
 
-</table>
-</form>
+    </table>
+
+
+</div>
+
+
 {% endblock %}

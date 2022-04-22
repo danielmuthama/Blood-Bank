@@ -170,3 +170,29 @@ tr:hover {
 td {
   padding: 0.5rem;
 }
+
+.samples {
+  width: 50rem;
+  margin: 0 auto;
+  flex-wrap: wrap;
+
+  display: flex;
+  justify-content: center;
+}
+
+.sample {
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 15rem;
+  height: 10rem;
+  border: 2px solid red;
+  background-color: rgba(127, 255, 212, 0.6);
+  transition: all 0.4s;
+}
+
+.sample:hover {
+  background-color: rgb(127, 255, 212);
+}
