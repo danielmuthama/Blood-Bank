@@ -9,9 +9,18 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('hos/signup', views.hos_signup, name='hos_signup'),
     path('hos/login', views.hos_login, name='hos_login'),
-    path('don/signup', views.don_signup, name='don_signup'),
-    path('don/login', views.don_login, name='don_login'),
+    path('hos/blood_drive', views.hos_create_blood_drive,
+         name='hos_create_blood_drive'),
+
+    path('hos/list_of_donors', views.list_of_donors, name='donors_list'),
+
+
+    path('don/signup', views.don_signup, name="don_signup"),
+    path('don/login', views.don_login, name="don_login"),
     path('don/donate', views.don_apply_to_donate, name='don_donate'),
+
+    path("logout", views.logout_request, name="logout"),
+
 
 ]
 

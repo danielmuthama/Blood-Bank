@@ -20,6 +20,11 @@ input {
   border: none;
 }
 
+input:focus {
+  outline: none;
+  border: none;
+}
+
 .btn {
   cursor: pointer;
   background-color: white;
@@ -91,7 +96,7 @@ input {
 .page-title {
   font-size: 5rem;
   color: white;
-  margin-bottom: 8rem;
+  margin-bottom: 6rem;
 }
 
 .auth-form,
@@ -105,6 +110,10 @@ input {
   padding: 1rem;
 }
 
+/* .auth-form span {
+  display: none;
+} */
+
 .form-cont {
   display: flex;
   align-items: center;
@@ -112,19 +121,52 @@ input {
   margin-bottom: 2rem;
 }
 
-.form-cont input {
-  margin-left: 1rem;
+.form-cont sup {
+  font-size: 1rem;
+  color: black;
+}
+
+.auth-form input,
+.donate-form input {
   border-radius: 1rem;
   padding: 1rem 2rem;
+  margin-bottom: 1.5rem;
   border: none;
 }
 
-.form-cont label {
+.auth-form label,
+.donate-form label {
   color: white;
   font-weight: bolder;
+  display: inherit;
 }
 
 .auth-form .btn,
 .donate-form .btn {
   margin: 3rem auto;
+}
+
+.donors {
+  background-color: red;
+  width: 50%;
+  margin: 0 auto;
+}
+
+th {
+  font-size: 2rem;
+}
+
+tr {
+  cursor: pointer;
+  border-bottom: 1px solid black;
+  background-color: rgba(127, 255, 212, 0.7);
+  transition: all 0.4s;
+}
+
+tr:hover {
+  background-color: rgb(127, 255, 212);
+}
+
+td {
+  padding: 0.5rem;
 }
