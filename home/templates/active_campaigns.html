@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{{ block.super}}
+<h1 class="page-title"> Active campaigns.</h1>
+
+<div class="campaigns">
+
+    {% if campaigns %}
+    {% for campaign in campaigns %}
+    <div class="campaign">
+
+
+        <h3 class="heading-3">
+            Hospital : {{campaign.user}}
+        </h3>
+
+        <p>Blood type: {{campaign.blood_group}} </p>
+        <p>Amount required: {{campaign.amount_wanted}} </p>
+    </div>
+    {% endfor %}
+
+    {% else %}
+    <h2 class="heading-2">No Active Campaigns</h2>
+
+    {% endif %}
+
+
+</div>
+
+</form>
+{% endblock %}

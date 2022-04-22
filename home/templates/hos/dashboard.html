@@ -3,8 +3,11 @@
 
 {% block content %}
 {{ block.super}}
-<h1 class="page-title"> Hospital samples</h1>
+<h1 class="page-title"> Samples left</h1>
 <div class="samples-container">
+
+    <a href="{% url 'hos_create_blood_drive' %} " class="create-btn btn">Create blood
+        drive </a>
 
     <div class="samples">
 
