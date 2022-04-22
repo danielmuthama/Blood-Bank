@@ -5,13 +5,15 @@
 {{ block.super}}
 <h1 class="page-title"> Create blood drive campaign.</h1>
 <form class="donate-form" method="post">
+    {% csrf_token %}
 
     <label for="fname"> Blood type:</label>
-    <input required type="text" name="blood_type" placeholder="Blood type"></input>
+    <input required type="text" name="blood_group" placeholder="Blood type"></input>
 
 
     <label for="password">Amount <sup>*In litres</sup>:</label>
-    <input required type="number" name="password" placeholder="Amount required"></input>
+    <input required type="number" name="amount_wanted"
+        placeholder="Amount required"></input>
 
     <input type="submit" value="Apply" class="btn"></input>
 </form>

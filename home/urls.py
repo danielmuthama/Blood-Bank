@@ -21,6 +21,7 @@ urlpatterns = [
     path('don/donate', views.don_apply_to_donate, name='don_donate'),
 
     path("logout", views.logout_request, name="logout"),
+    path('active_campaigns', views.active_campaigns, name='active_campaigns')
 
 
 ]
