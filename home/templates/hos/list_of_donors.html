@@ -4,7 +4,12 @@
 {% block content %}
 {{ block.super}}
 <h1 class="page-title"> List of willing donors.</h1>
+
 <div class="donors-container">
+
+    <a href="{% url 'don_donate' %}" class="create-btn btn ">Apply to
+        donate</a>
+
     <table class="donors">
         <tr>
             <th>Username</th>

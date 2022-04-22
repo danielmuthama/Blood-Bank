@@ -5,7 +5,10 @@
 {{ block.super}}
 <h1 class="page-title"> Active campaigns.</h1>
 
-<div class="campaigns">
+<div class="campaigns campaigns-container">
+
+    <a href="{% url 'hos_create_blood_drive' %}" class="create-btn btn ">Create Blood
+        drive</a>
 
     {% if campaigns %}
     {% for campaign in campaigns %}
@@ -17,7 +20,7 @@
         </h3>
 
         <p>Blood type: {{campaign.blood_group}} </p>
-        <p>Amount required: {{campaign.amount_wanted}} </p>
+        <p>Amount required: {{campaign.amount_wanted}} litres </p>
     </div>
     {% endfor %}
 

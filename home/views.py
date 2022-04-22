@@ -74,7 +74,7 @@ def hos_login(request):
             if user is not None:
                 login(request, user)
                 messages.info(request, f"You are now logged in as {username}.")
-                return redirect(list_of_donors)
+                return redirect(active_campaigns)
             else:
                 messages.error(request, "Invalid username or password.")
         else:
@@ -113,7 +113,7 @@ def don_login(request):
                 login(request, user)
                 messages.info(request, f"You are now logged in as {username}.")
 
-                return redirect(home)
+                return redirect(list_of_donors)
 
             else:
                 messages.error(request, "Invalid username or password.")
@@ -144,7 +144,7 @@ def hos_create_blood_drive(request):
 
         messages.success(request, "Created campaign successfuly.")
 
-        return redirect(home)
+        return redirect(active_campaigns)
 
     return render(request, 'hos/create_blood_drive.html')
 
@@ -163,7 +163,7 @@ def don_apply_to_donate(request):
         blood_request.save()
 
         messages.success(request, "Applied successfuly.")
-        return redirect(home)
+        return redirect(list_of_donors)
     return render(request, 'don/apply_to_donate.html')
 
 

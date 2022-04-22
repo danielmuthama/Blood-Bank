@@ -17,7 +17,8 @@ SECRET_KEY = 'django-insecure-14v(5^5%gui@!xp(%76bt=%%%!yf^-#@2-(6rp9i*q(i%8n=4%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.localhost', '.127.0.0.1',
+                 '.0.0.0.0', ]
 
 
 # Application definition
@@ -74,12 +75,12 @@ WSGI_APPLICATION = 'Blood_Bank.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # postgres://oulblympvvsbsk:f172e7773921d083a2f83e00f16174df6f75facab7f145247fc915cc5cb0aeed@ec2-52-71-69-66.compute-1.amazonaws.com:5432/d6225im2bnb5ll

@@ -14,14 +14,14 @@
 
   <nav class="nav">
     <a href=" {% url 'home' %}" class="nav__link">Home</a>
-    <a href="#" class="nav__link">Hospital</a>
-    <a href="#" class="nav__link">Donor</a>
 
 
     {% if user.is_authenticated %}
 
 
     <a href="{% url 'hos_dashboard' %}" class="nav__link">Dashboard</a>
+
+    <a href="{% url 'donors_list' %}" class="nav__link">Donors List</a>
 
     <a href="{% url 'active_campaigns' %} " class="nav__link">Campaigns</a>
 

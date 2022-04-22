@@ -172,7 +172,9 @@ td {
   padding: 0.5rem;
 }
 
-.samples-container {
+.samples-container,
+.donors-container,
+.campaigns-container {
   position: relative;
 }
 
@@ -211,7 +213,7 @@ td {
 .campaigns {
   display: flex;
   flex-direction: column;
-  width: fit-content;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -219,6 +221,10 @@ td {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: fit-content;
+
+  margin-bottom: 2rem;
+  margin-left: 5rem;
 
   padding: 1rem 2rem;
 
