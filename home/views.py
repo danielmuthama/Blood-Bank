@@ -1,4 +1,5 @@
-from tkinter import PIESLICE
+
+import email
 from django.shortcuts import render, redirect
 
 
@@ -134,21 +135,22 @@ def hos_create_blood_drive(request):
     return render(request, 'hos/create_blood_drive.html')
 
 
+from django.forms.models import model_to_dict
+
+
 def don_apply_to_donate(request):
     # Check if authenticated user is a donor user obj
     if request.method == 'POST':
-        donor = Donor.objects.get(user=request.user)
-        if not donor:
-            return redirect('home')
+        # Check if its actually a donor
 
-        if request.method == 'POST':
-            user = request.user
-            blood_group = request.POST['blood_group']
-            age = request.POST['age']
+        user = request.user
+        blood_group = request.POST['blood_group']
+        age = request.POST['age']
 
-            blood_request = BloodRequest(
-                user=user, blood_group=blood_group, age=age)
-            blood_request.save()
+        blood_request = BloodRequest(
+            user=user, blood_group=blood_group, age=age, tel=user.email)
+        blood_request.save()
 
-            return render(request, 'home.html')
+        messages.success(request, "Applied successfuly.")
+        return redirect(home)
     return render(request, 'don/apply_to_donate.html')

@@ -126,14 +126,16 @@ input:focus {
   color: black;
 }
 
-.auth-form input {
+.auth-form input,
+.donate-form input {
   border-radius: 1rem;
   padding: 1rem 2rem;
   margin-bottom: 1.5rem;
   border: none;
 }
 
-.auth-form label {
+.auth-form label,
+.donate-form label {
   color: white;
   font-weight: bolder;
   display: inherit;

@@ -4,17 +4,17 @@
 {% block content %}
 {{ block.super}}
 <h1 class="page-title"> Apply to donate.</h1>
-<form class="donate-form">
-    <div class="form-cont">
-        <label for="fname"> Blood type:</label>
-        <input required type="text" name="blood_type"
-            placeholder="Enter your blood type"></input>
-    </div>
-    <div class="form-cont">
-        <label for="password">Age:</label>
-        <input required type="number" name="password"
-            placeholder="Enter your age"></input>
-    </div>
+<form class="donate-form" method="post">
+    {% csrf_token %}
+
+    <label for="fname"> Blood type:</label>
+    <input required type="text" name="blood_group"
+        placeholder="Enter your blood type"></input>
+
+
+    <label for="password">Age:</label>
+    <input required type="number" name="age" placeholder="Enter your age"></input>
+
     <input type="submit" value="Apply" class="btn"></input>
 </form>
 {% endblock %}

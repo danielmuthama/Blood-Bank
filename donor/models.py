@@ -9,6 +9,9 @@ class BloodRequest(models.Model):
     tel = models.CharField(max_length=50, default=0)
     age = models.IntegerField(default=0)
 
+    def __str__(self):
+        return f'{self.user.username } Type {self.blood_group}'
+
 
 class BloodDrive(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
