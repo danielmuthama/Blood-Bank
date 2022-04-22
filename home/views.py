@@ -36,6 +36,11 @@ def list_of_donors(request):
     return render(request, 'hos/list_of_donors.html', {'blood_requests': blood_requests})
 
 
+def hos_dashboard(request):
+
+    return render(request, 'hos/dashboard.html')
+
+
 def hos_signup(request):
     if request.method == "POST":
         form = NewUserForm(request.POST)

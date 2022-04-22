@@ -13,6 +13,7 @@ urlpatterns = [
          name='hos_create_blood_drive'),
 
     path('hos/list_of_donors', views.list_of_donors, name='donors_list'),
+    path('hos/dashboard', views.hos_dashboard, name="hos_dashboard"),
 
 
     path('don/signup', views.don_signup, name="don_signup"),
